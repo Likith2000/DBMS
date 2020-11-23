@@ -1,0 +1,21 @@
+<%- include("../partials/header") -%>
+<form action="/orders/delete" method="POST">
+  <div class="padding row form-group">
+    <div class="col-md-4">
+      <label for="id">
+        <h3>Order ID</h3>
+      </label>
+      <h4>
+        <select class="btn btn-secondary white-text dropdown-toggle" name="id" id="id">
+          <% for (const i in data) { %>
+          <option class="dropdown-item white-text font-semibold" value="<%= data[i].OrderID %>">
+            <%= data[i].OrderID %> </option>
+          <% } %>
+        </select>
+      </h4>
+    </div>
+  </div>
+  <button type="submit" class="padding btn btn-lg btn-primary">Go!</button>
+</form>
+<a href="/orders/" class="padding btn btn-lg btn-primary">Back to the Orders Table</a>
+<%- include("../partials/footer") -%>
